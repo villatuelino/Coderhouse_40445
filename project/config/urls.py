@@ -12,4 +12,6 @@ urlpatterns = [
     path("miTemplate/", views.probando_template),
     path("dia/", views.fecha_hora),
     path("azar/", views.numero_aleatorio),
+    path("miTemplateRender/", views.probando_template_render),
+    path("miTemplate2/", views.probando_template2),
 ]

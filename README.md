@@ -1,4 +1,4 @@
-# Preparación de archivos, carpetas, Git y entorno virtual para el proyecto Django
+# Extensiones recomendadas y comandos vistos
 
 Para ver este archivo con mayor legibilidad, presionar `control + shift + v`
 

@@ -1,5 +1,6 @@
 {
     // PYTHON
+    "python.analysis.pylanceLspClientEnabled": true,
     "python.analysis.autoFormatStrings": true,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.gotoDefinitionInStringLiteral": true,

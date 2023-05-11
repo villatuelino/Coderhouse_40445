@@ -1,8 +1,8 @@
-# Extensiones recomendadas y comandos vistos
+# Clonar este repositorio con `git clone https://github.com/esthorace/Coderhouse_40445.git`
 
-Para ver este archivo con mayor legibilidad, presionar `control + shift + v`
+Para ver este archivo en VScode con mayor legibilidad, presionar `control + shift + v`
 
-- Nuevas extensiones sugeridas para Visual Studio Code y Python
+- Extensiones sugeridas para trabajar con Django:
 
     1. Black Formatter (sirve para auto formatear el código Python)
     2. Isort (sirve para auto ordenar importaciones en Python)

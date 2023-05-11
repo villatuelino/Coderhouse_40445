@@ -1,17 +1,26 @@
-# Clonar este repositorio con `git clone https://github.com/esthorace/Coderhouse_40445.git`
+# Copiar este repositorio de la siguiente manera:
+
+Si ya lo tenías clonado, y ves que existe en tu PC la rama "clase_17, entonces ejecuta el siguiente comando en la terminal, en tu proyecto:
+
+**`git pull origin clase_18`**
+
+De lo contrario, en una carpeta nueva, vacía, ejecuta en la terminal el siguiente comando:
+
+**`git clone https://github.com/esthorace/Coderhouse_40445.git`**
 
 Para ver este archivo en VScode con mayor legibilidad, presionar `control + shift + v`
 
 - Extensiones sugeridas para trabajar con Django:
 
-    1. Black Formatter (sirve para auto formatear el código Python)
-    2. Isort (sirve para auto ordenar importaciones en Python)
-    3. IntelliCode (ayuda para varios lenguajes de programación)
-    4. Git Graph (ayuda para cualquier proyecto Git)
-    5. Django Support (color de sintaxis y autocompletado para Django)
-    6. SQLite Viewer (visualizador de bases de datos SQLite3)
-    7. djLint (formateador y linter para HTML con Django)
+    1. **Black Formatter** (sirve para auto formatear el código Python)
+    2. **Isort** (sirve para auto ordenar importaciones en Python)
+    3. **IntelliCode** (ayuda para varios lenguajes de programación)
+    4. **Git Graph** (ayuda para cualquier proyecto Git)
+    5. **Django Support** (color de sintaxis y autocompletado para Django)
+    6. **SQLite Viewer** (visualizador de bases de datos SQLite3)
+    7. **djLint** (formateador y linter para HTML con Django)
 
+Además, he agregado una carpeta llamada `.vscode` que tiene un archivo llamado `settings.json`. He configurado las extensiones para que vayamos trabajando con lo mismo.
 
 ## Comandos
 

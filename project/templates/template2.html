@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-
-    <div style="text-align: center;">
-        <h1> Estas son mis notas: </h1>
-        <div style="font-size: xx-large;">
-            {% for nota in notas %}
-                {% if nota < 4 %}
-                    <p style="color: red"> NOTA MALA: {{ nota }} </p>
-                {% else %}
-                    <p style="color: green"> NOTA BUENA: {{ nota }} </p>
-                {% endif %}
-            {% endfor %}
-        </div>
+    
+    <div style="text-align: center">
+        <h1> Estas son mis notas </h1>
+        {% for nota in notas %}
+            {% if nota < 4 %}
+                <p style="color:red"> NOTA MALA: {{ nota }}</p>
+            {% else %}
+                <p style="color:green; font-size: xx-large;"> NOTA BUENA: {{ nota }}</p>
+            {% endif %}
+        {% endfor %}
     </div>
 
+    
 </body>
 </html>

@@ -1,0 +1,65 @@
+{
+    // PYTHON
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.gotoDefinitionInStringLiteral": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.terminal.focusAfterLaunch": true,
+    // VSCODE
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".git": true,
+        "**/__pycache__": true
+    },
+    "files.autoSave": "onFocusChange",
+    "workbench.tree.indent": 20,
+    // *************
+    // EXTENSIONES
+    // *************
+    // BLACK
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            "editor.formatOnType": true,
+        },
+    },
+    "black-formatter.args": [
+        "--line-length=119"
+    ],
+    // ISORT
+    "isort.args": [
+        "--profile",
+        "black",
+    ],
+    // CODEIUM
+    "codeium.enableCodeLens": false,
+    "workbench.editorAssociations": {
+        "*.db": "sqlite-viewer.option"
+    },
+    // DJLINT
+    "[html]": {
+        "editor.defaultFormatter": "monosans.djlint"
+    },
+    "djlint.maxLineLength": 119,
+    "djlint.ignore": [
+        "H021", // estilos en una línea HTML
+        "H030", // metadatos para <head> meta=description
+        "H031", // metadatos para <head> meta=keywords
+    ],
+    "djlint.blankLineAfterTag": [
+        "load",
+        "extends",
+        "include"
+    ],
+    "djlint.blankLineBeforeTag": [
+        "block"
+    ],
+    "explorerExclude.backup": {},
+}

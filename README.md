@@ -1,6 +1,6 @@
 # Copiar este repositorio de la siguiente manera:
 
-Si ya lo tenías clonado, y ves que existe en tu PC la rama "clase_17, entonces ejecuta el siguiente comando en la terminal, en tu proyecto:
+Si ya lo tenías clonado, viendo que existe en tu PC la rama "clase_17", entonces ejecuta el siguiente comando en la terminal, en tu proyecto. Dejará tu rama "clase_17" sin modificar, y creará la rama "clase_18":
 
 **`git pull origin clase_18`**
 

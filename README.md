@@ -1,8 +1,8 @@
 # Copiar este repositorio de la siguiente manera:
 
-Si ya lo tenías clonado, viendo que existe en tu PC la rama "clase_17", entonces ejecuta el siguiente comando en la terminal, en tu proyecto. Dejará tu rama "clase_17" sin modificar, y creará la rama "clase_18":
+Si ya lo tenías clonado, viendo que existe en tu PC la rama "clase_18", entonces ejecuta el siguiente comando en la terminal, en tu proyecto. Dejará tu rama "clase_17" sin modificar, y creará la rama "clase_18":
 
-**`git pull origin clase_18`**
+**`git pull origin clase_19`**
 
 De lo contrario, en una carpeta nueva, vacía, ejecuta en la terminal el siguiente comando:
 
@@ -10,28 +10,9 @@ De lo contrario, en una carpeta nueva, vacía, ejecuta en la terminal el siguien
 
 Para ver este archivo en VScode con mayor legibilidad, presionar `control + shift + v`
 
-- Extensiones sugeridas para trabajar con Django:
+He agregado una carpeta llamada `.vscode` que tiene un archivo llamado `settings.json`. He configurado las extensiones para que vayamos trabajando con lo mismo.
 
-    1. **Black Formatter** (sirve para auto formatear el código Python)
-    2. **Isort** (sirve para auto ordenar importaciones en Python)
-    3. **IntelliCode** (ayuda para varios lenguajes de programación)
-    4. **Git Graph** (ayuda para cualquier proyecto Git)
-    5. **Django Support** (color de sintaxis y autocompletado para Django)
-    6. **SQLite Viewer** (visualizador de bases de datos SQLite3)
-    7. **djLint** (formateador y linter para HTML con Django)
-
-Además, he agregado una carpeta llamada `.vscode` que tiene un archivo llamado `settings.json`. He configurado las extensiones para que vayamos trabajando con lo mismo.
-
-## Comandos
-
-`mkdir nueva_carpeta`
-> Crea una carpeta llamada nueva_carpeta
-
-`ls`
-> Muestra la lista de archivos
-
-`cd nueva_carpeta`
-> Cambia de carpeta
+## Comandos para crear un proyecto y una aplicación
 
 `pwd`
 > Muestra la ruta actual
@@ -54,14 +35,26 @@ Además, he agregado una carpeta llamada `.vscode` que tiene un archivo llamado 
 `pip install djlint`
 > Instala djLint, necesario para la extensión djLint de VSCode
 
+`mkdir project`
+> Crea un directorio llamado project
+
+`cd project`
+> Cambia de directorio
+
 `django-admin startproject config .`
-> Crea un proyecto en el directorio actual
+> Crea un proyecto en el directorio actual, en la carpeta config
 
 `python manage.py runserver`
-> Ejecuta el servidor
+> Ejecuta el servidor. Para pararlo: control + c (cmd + c en Mac)
 
-`python manage.py startapp app`
-> Crea una nueva aplicación llamada app
+`mkdir apps`
+> Crea un directorio llamado 'apps' que contendrá las aplicaciones de Django
+
+`cd apps`
+> Cambia de directorio para poder crear las aplicaciones
+
+`python ../manage.py startapp nombre_app`
+> Crea una nueva aplicación (notar los dos puntos)
 
 `python manage.py makemigrations`
 > Crea las migraciones, que son archivos Python encargados de la base de datos
@@ -72,9 +65,9 @@ Además, he agregado una carpeta llamada `.vscode` que tiene un archivo llamado 
 `python manage.py createsuperuser`
 > Crea un usuario administrador para acceder a 127.0.0.1:8000/admin
 
-## Nota sobre Git
+## Nota sobre Git y las clases
 
-Recuerda cambiar de rama a **clase_17** y ver el `README.md` para ver el flujo de trabajo con Git.
+Puedes cambiar de ramas para ver cada clase.
 
 ## Requirements.txt
 

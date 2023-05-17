@@ -53,8 +53,8 @@ He agregado una carpeta llamada `.vscode` que tiene un archivo llamado `settings
 `cd apps`
 > Cambia de directorio para poder crear las aplicaciones
 
-`python ../manage.py startapp nombre_app`
-> Crea una nueva aplicación (notar los dos puntos)
+`django-admin startapp nombre_app`
+> Crea una nueva aplicación (recuerda registrarla en settings.py)
 
 `python manage.py makemigrations`
 > Crea las migraciones, que son archivos Python encargados de la base de datos

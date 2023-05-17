@@ -4,6 +4,6 @@ from .models import Cliente
 
 
 def index(request):
-    clientes = Cliente.objects.all()
-    datos = {"clientes": clientes}
-    return render(request, "cliente/index_cliente.html", datos)
+    clientes_registros = Cliente.objects.all()
+    contexto = {"clientes": clientes_registros}
+    return render(request, "cliente/index.html", contexto)

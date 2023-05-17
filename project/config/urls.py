@@ -1,19 +1,10 @@
-from pathlib import Path
-
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
-from . import views
+from .views import index
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("saludar/", views.saludo),
-    path("saludar2/", views.saludo_con_input),
-    path("otra-vista/", views.segunda_vista),
-    path("nombre/<nombre>/<apellido>/", views.nombre),
-    path("miTemplate/", views.probando_template),
-    path("dia/", views.fecha_hora),
-    path("azar/", views.numero_aleatorio),
-    path("miTemplateRender/", views.probando_template_render),
-    path("miTemplate2/", views.probando_template2),
+    path("", index, name="index"),
+    path("cliente/", include("cliente.urls", "cliente")),
 ]

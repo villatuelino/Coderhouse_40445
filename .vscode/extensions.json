@@ -3,7 +3,6 @@
         "aaron-bond.better-comments",
         "ms-python.black-formatter",
         "almahdi.code-django",
-        "monosans.djlint",
         "mhutchie.git-graph",
         "visualstudioexptteam.vscodeintellicode-completions",
         "ms-python.isort",

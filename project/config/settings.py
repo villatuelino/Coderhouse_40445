@@ -10,24 +10,31 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+#! Sirve para generar la clave secreta para el proyecto
+from django.core.management.utils import get_random_secret_key
+
+#! Se agrega una cadena de forma aleatoria
+SECRET_KEY = get_random_secret_key()
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#! sys.path es una lista de rutas donde Python busca módulos importados
-#! Servirá para poder importar las aplicaciones de la carpeta apps
+# ********************************************************************
+# sys.path es una lista de rutas donde Python busca módulos importados
+# Servirá para poder importar las aplicaciones de la carpeta apps
 import sys
 
-APPS_DIR = BASE_DIR / "apps"
-sys.path.append(str(APPS_DIR))
-
+APLICACIONES = BASE_DIR / "apps"
+sys.path.append(str(APLICACIONES))
+# ********************************************************************
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-8mhbm+)d2urr=#r5oz6_-5y1vll)82c)1$y5!s)*$voqm)w#$#"
+#! Se comentar para que no exponer la clave secreta
+# SECRET_KEY = "django-insecure-8mhbm+)d2urr=#r5oz6_-5y1vll)82c)1$y5!s)*$voqm)w#$#"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,9 +51,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+
+# * Apps propias
+
+INSTALLED_APPS += [
     "cliente",
     "venta",
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

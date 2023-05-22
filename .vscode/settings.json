@@ -42,7 +42,8 @@
     // CODEIUM
     "codeium.enableCodeLens": false,
     "workbench.editorAssociations": {
-        "*.db": "sqlite-viewer.option"
+        "*.db": "sqlite-viewer.option",
+        "*.sqlite3": "sqlite3-editor.editor"
     },
     // DJLINT
     "[html]": {

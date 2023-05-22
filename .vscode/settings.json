@@ -41,4 +41,8 @@
     ],
     // CODEIUM
     "codeium.enableCodeLens": false,
+    "editor.tokenColorCustomizations": {
+        "comments": "",
+        "textMateRules": []
+    },
 }

@@ -62,7 +62,7 @@
         "extends",
     ],
     "djlint.blankLineBeforeTag": [
-        "block"
+        // "block"
     ],
     "djlint.preserveLeadingSpace": false,
 }

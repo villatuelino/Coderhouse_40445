@@ -53,3 +53,5 @@ Filtra los objetos donde el campo coincida con el patrón de expresión regular 
 ## Nota
 
 `filter()` Devuelve un objeto `QuerySet` que puede ser iterado y utilizado en otras operaciones, como ordenamiento, agregación y más.
+
+[Volver](../README.md)

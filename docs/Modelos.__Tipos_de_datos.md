@@ -8,7 +8,7 @@
 
 ## Números
 
-- `IntegerField`: Un campo que almacena números enteros (desde -2147483648 hasta 2147483647. . SQLite soporta un rango más pequeño).
+- `IntegerField`: Un campo que almacena números enteros (desde -2147483648 hasta 2147483647. SQLite soporta un rango más pequeño)
 
 - `BigIntegerField`: Un campo que almacena números enteros muy grandes (desde -9223372036854775808 hasta 9223372036854775807. SQLite no lo soporta).
 
@@ -56,16 +56,16 @@ En general, `UUIDField` es útil para aplicaciones web que requieren un identifi
 
 ## `on_delete` en `ForeignKey`
 
-El parámetro `on_delete` es propio de `ForeignKey`. Acepta los siguientes valores:
+El parámetro `on_delete` es propio de `ForeignKey` . Acepta los siguientes valores:
 
 - `CASCADE`: Borra los objetos relacionados cuando se borra el objeto principal.
-- `PROTECT`: Evita la eliminación del objeto principal si hay objetos relacionados. Genera una excepción `ProtectedError`.
+- `PROTECT`: Evita la eliminación del objeto principal si hay objetos relacionados. Genera una excepción `ProtectedError`
 - `SET_NULL`: Establece los campos relacionados en `NULL` cuando se borra el objeto principal. Esta opción solo se puede usar en campos que permiten valores nulos (`null=True`).
 - `SET_DEFAULT`: Establece los campos relacionados en su valor predeterminado cuando se borra el objeto principal. Esta opción solo se puede usar en campos que tienen un valor predeterminado.
 - `SET()`: Establece los campos relacionados en un valor especificado cuando se borra el objeto principal. El valor se especifica utilizando un objeto de modelo o un valor constante.
 - `DO_NOTHING`: No hace nada cuando se borra el objeto principal. Esto puede resultar en referencias rotas en la base de datos y debe usarse con precaución.
 
-Es importante tener en cuenta que algunos tipos de `on_delete` pueden no ser compatibles con ciertos motores de base de datos. Por ejemplo, `SET_DEFAULT` no está disponible en SQLite. Además, se debe tener cuidado al utilizar `SET_NULL`, ya que puede introducir referencias rotas en la base de datos y afectar la integridad de los datos.
+Es importante tener en cuenta que algunos tipos de `on_delete` pueden no ser compatibles con ciertos motores de base de datos. Por ejemplo, `SET_DEFAULT` no está disponible en SQLite. Además, se debe tener cuidado al utilizar `SET_NULL` , ya que puede introducir referencias rotas en la base de datos y afectar la integridad de los datos.
 
 ## Archivos
 
@@ -78,7 +78,6 @@ Es importante tener en cuenta que algunos tipos de `on_delete` pueden no ser com
 ## Otros tipos de campo
 
 - `BooleanField`: Un campo que almacena valores booleanos (True o False).
-
 - `EmailField`: Un campo que almacena una dirección de correo electrónico. Formato: El campo `EmailField` verifica que el valor ingresado en el campo tenga un formato de dirección de correo electrónico válido, es decir, que contenga un nombre de usuario, una arroba (@) y un nombre de dominio.
 
 Longitud: El campo `EmailField` verifica que la longitud total del correo electrónico no exceda los límites permitidos en la base de datos.

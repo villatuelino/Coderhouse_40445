@@ -56,9 +56,9 @@ INSTALLED_APPS = [
 # * Apps propias
 
 INSTALLED_APPS += [
-    "cliente",
+    "home",
+    "producto",
     "venta",
-    "_core_",
 ]
 
 

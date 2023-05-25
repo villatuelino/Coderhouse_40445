@@ -1,7 +1,7 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from . import forms, models
@@ -67,3 +67,7 @@ class ProductoCategoriaUpdate(UpdateView):
     model = models.ProductoCategoria
     success_url = reverse_lazy("producto:productocategoria_list")
     form_class = forms.ProductoCategoriaForm
+
+
+class ProductoCategoriaDetail(DetailView):
+    model = models.ProductoCategoria

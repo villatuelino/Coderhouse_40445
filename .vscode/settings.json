@@ -18,7 +18,7 @@
         "**/__pycache__": true
     },
     "files.autoSave": "onFocusChange",
-    "workbench.tree.indent": 20,
+    "workbench.tree.indent": 15,
     // *************
     // EXTENSIONES
     // *************
@@ -32,7 +32,7 @@
         },
     },
     "black-formatter.args": [
-        "--line-length=119"
+        "--line-length=150"
     ],
     // ISORT
     "isort.args": [

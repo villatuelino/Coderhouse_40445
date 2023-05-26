@@ -1,8 +1,10 @@
 {% extends 'producto/index.html' %}
 
+
+{% block title %} Detalle de Categorías de Productos {% endblock title %}
+
 {% block content_producto %}
 
-    {% block title %} Lista de Categorías de Productos {% endblock title %}
     <ul>
         <li>
             <p><strong>Nombre:</strong> {{ object.nombre }}</p>
@@ -10,6 +12,7 @@
         </li>
     </ul>
 
-    <a href="{% url 'producto:index' %}">Volver a índice de Producto</a>
+    {% include 'producto/index_back.html' %}
+
 
 {% endblock content_producto %}

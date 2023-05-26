@@ -1,15 +1,15 @@
 {% extends 'producto/index.html' %}
 
+
+{% block title %} Categorías de Productos {% endblock title %}
+
 {% block content_producto %}
-
-    {% block title %} Categorías de Productos {% endblock title %}
-
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Guardar</button>
+        <button type="submi" class="btn btn-success">Guardar</button>
     </form>
 
-    <a href="{% url 'producto:index' %}">Volver a índice de Producto</a>
+    {% include 'producto/index_back.html' %}
 
 {% endblock content_producto %}

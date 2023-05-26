@@ -1,16 +1,17 @@
 {% extends 'producto/index.html' %}
 
+
+{% block title %} Eliminación de Categoría de Productos {% endblock title %}
+
 {% block content_producto %}
 
-    {% block title %} Eliminación de Categoría de Productos {% endblock title %}
-
-    <p>¿Confirmas eliminar "{{ object }}"?</p>
+    <p class="fs-5 fst-italic ">¿Confirmas eliminar "{{ object }}"?</p>
 
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Confirmar</button>
+        <button type="submit" class="btn btn-danger">Confirmar</button>
     </form>
 
-    <a href="{% url 'producto:index' %}">Volver a índice de Producto</a>
+    {% include 'producto/index_back.html' %}
 
 {% endblock content_producto %}

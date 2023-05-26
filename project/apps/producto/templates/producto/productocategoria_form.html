@@ -2,7 +2,7 @@
 
 {% block content_producto %}
 
-    <h2>Categorías de Productos</h2>
+    {% block title %} Categorías de Productos {% endblock title %}
 
     <form method="post">
         {% csrf_token %}

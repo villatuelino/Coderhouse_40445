@@ -1,8 +1,16 @@
 {% extends 'producto/index.html' %}
 
-{% block content_producto %}
 
-    <h2>Lista de Categorías de Productos</h2>
+{% block title %} Lista de Categorías de Productos {% endblock title %}
+
+
+{% block content_producto %}
+    <!-- Sirve para buscar categorías por nombre. Se pasa a la variable consulta de la vista. -->
+    <div class="py-lg-4">
+        <form action="{% url 'producto:productocategoria_list' %}" method="get">
+            <input name="consulta" type="text" placeholder="Buscar...">
+        </form>
+    </div>
 
     {% for categoria in object_list %}
         <ul>

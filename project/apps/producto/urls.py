@@ -4,7 +4,7 @@ from . import views
 
 # *********** URLS basadas en funciones
 urlpatterns = [
-    # path("", views.index, name="index"),
+    path("", views.index, name="index"),
     #     path("producto_categoria_listado/", views.producto_categoria_list, name="producto_categoria_list"),
     #     path("producto_categoria_create/", views.producto_categoria_create, name="producto_categoria_create"),
     #     path("producto_categoria_delete/<int:id>", views.producto_categoria_delete, name="producto_categoria_delete"),
@@ -14,7 +14,7 @@ urlpatterns = [
 
 # *********** URLS basadas en clases
 urlpatterns += [
-    path("", views.IndexView.as_view(), name="index"),
+    # path("", views.IndexView.as_view(), name="index"),
     path("productocategoria/list/", views.ProductoCategoriaList.as_view(), name="productocategoria_list"),
     path("productocategoria/create/", views.ProductoCategoriaCreate.as_view(), name="productocategoria_create"),
     path("productocategoria/delete/<int:pk>", views.ProductoCategoriaDelete.as_view(), name="productocategoria_delete"),

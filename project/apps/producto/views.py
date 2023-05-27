@@ -1,9 +1,17 @@
+# Importaciones para el logueo
+from django.contrib.auth.decorators import login_required  # funciones
+from django.contrib.auth.mixins import LoginRequiredMixin  # clases
+
+# Importaciones para funciones
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
+
+# Importaciones para clases
 from django.urls import reverse, reverse_lazy
 from django.views.generic import DetailView, ListView, TemplateView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
+# Módulos de la aplicación
 from . import forms, models
 
 # *
@@ -11,12 +19,13 @@ from . import forms, models
 # *
 
 
-# def index(request: HttpRequest) -> HttpResponse:
-#     return render(request, "producto/index.html")
+# @login_required
+def index(request: HttpRequest) -> HttpResponse:
+    return render(request, "producto/index.html")
 
 
-class IndexView(TemplateView):
-    template_name = "producto/index.html"
+# class IndexView(TemplateView):
+#     template_name = "producto/index.html"
 
 
 # *
@@ -62,7 +71,8 @@ class ProductoCategoriaList(ListView):
 #     return render(request, "producto/productocategoria_form.html", {"form": form})
 
 
-class ProductoCategoriaCreate(CreateView):
+#! Primero se debe heredad LoginRequiredMixin
+class ProductoCategoriaCreate(LoginRequiredMixin, CreateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
     success_url = reverse_lazy("producto:index")
@@ -78,6 +88,8 @@ class ProductoCategoriaCreate(CreateView):
 #         categoria.delete()
 #         return redirect("producto:productocategoria_list")
 #     return render(request, "producto/productocategoria_confirmdelete.html", {"categoria": categoria})
+
+# ! clase decorada
 
 
 class ProductoCategoriaDelete(DeleteView):

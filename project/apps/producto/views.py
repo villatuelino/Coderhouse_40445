@@ -71,7 +71,7 @@ class ProductoCategoriaList(ListView):
 #     return render(request, "producto/productocategoria_form.html", {"form": form})
 
 
-#! Primero se debe heredad LoginRequiredMixin
+#! Primero se debe heredar LoginRequiredMixin
 class ProductoCategoriaCreate(LoginRequiredMixin, CreateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
@@ -88,8 +88,6 @@ class ProductoCategoriaCreate(LoginRequiredMixin, CreateView):
 #         categoria.delete()
 #         return redirect("producto:productocategoria_list")
 #     return render(request, "producto/productocategoria_confirmdelete.html", {"categoria": categoria})
-
-# ! clase decorada
 
 
 class ProductoCategoriaDelete(DeleteView):

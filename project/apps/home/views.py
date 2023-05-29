@@ -44,7 +44,7 @@ def register(request: HttpRequest) -> HttpResponse:
     else:
         # form = UserCreationForm()
         form = forms.CustomUserCreationForm()
-    return render(request, "home/registro.html", {"form": form})
+    return render(request, "home/register.html", {"form": form})
 
 
 def about(request: HttpRequest) -> HttpResponse:

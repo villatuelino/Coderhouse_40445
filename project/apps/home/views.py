@@ -1,5 +1,6 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.urls import reverse
 
 
 def index(request: HttpRequest) -> HttpResponse:
@@ -42,3 +43,7 @@ def register(request: HttpRequest) -> HttpResponse:
         # form = UserCreationForm()
         form = forms.UserRegisterForm()
     return render(request, "home/registro.html", {"form": form})
+
+
+def about(request: HttpRequest) -> HttpResponse:
+    return render(request, "home/about.html")

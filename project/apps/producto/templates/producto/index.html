@@ -13,7 +13,9 @@
         </h3>
 
         {% block content_producto %}
-            <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary">Crear</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary">Crear</a>
+            {% endif %}
             <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-primary">Listar</a> <br>
         {% endblock content_producto %}
 

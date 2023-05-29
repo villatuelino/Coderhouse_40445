@@ -11,11 +11,10 @@ from . import forms, models
 # *
 
 
-# def index(request: HttpRequest) -> HttpResponse:
-#     return render(request, "producto/index.html")
+def index(request: HttpRequest) -> HttpResponse:
+    return render(request, "producto/index.html")
 
-
-class IndexView(TemplateView):
+    # class IndexView(TemplateView):
     template_name = "producto/index.html"
 
 

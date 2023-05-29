@@ -9,6 +9,7 @@
         "pkief.material-icon-theme",
         "ms-python.vscode-pylance",
         "ms-python.python",
-        "qwtel.sqlite-viewer"
+        "qwtel.sqlite-viewer",
+        "torresgol10.bootstrap-class-autocomplete"
     ]
 }

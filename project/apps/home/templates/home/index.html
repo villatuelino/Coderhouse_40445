@@ -7,7 +7,8 @@
     {% endif %}
 
     {% if user.is_staff %}
-        <a href="{% url 'home:register' %}">Registrar nuevo vendedor</a>
+        <p><a href="{% url 'admin:index' %}">Administración</a></p>
+        <p><a href="{% url 'home:register' %}">Registrar nuevo vendedor</a></p>
     {% endif %}
 
     <div class="row gx-4 gx-lg-5 align-items-center my-5">

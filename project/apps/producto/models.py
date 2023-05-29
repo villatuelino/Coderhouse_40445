@@ -26,7 +26,7 @@ class Producto(models.Model):
     cantidad = models.FloatField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     descripcion = models.CharField(max_length=250, blank=True, null=True)
-    fecha_actualizacion = models.DateTimeField(auto_now_add=True, editable=False)
+    fecha_actualizacion = models.DateTimeField(default=timezone.now, editable=False)
 
     class Meta:
         models.UniqueConstraint(fields=["categoria", "nombre"], name="categoria_producto")

@@ -46,9 +46,11 @@ class Producto(models.Model):
         return self._fecha_actualizacion
 
     def ver_precio_actualizar_fecha(self):
-        print("ver_precio_actualizar")
-        if self.pk is not None:
-            print("self.ok no es None")
-            original_producto = Producto.objects.get(pk=self.pk)
-            if original_producto != self.precio:
-                self._fecha_actualizacion = timezone.now
+        if self.pk:
+            original = Producto.objects.get(pk=self.pk)
+            if original.precio != self.precio:
+                self._fecha_actualizacion = timezone.now()
+
+    def save(self, *args, **kwargs):
+        self.ver_precio_actualizar_fecha()
+        super().save(*args, **kwargs)

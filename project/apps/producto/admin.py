@@ -30,7 +30,7 @@ class ProductoAdmin(admin.ModelAdmin):
         "cantidad",
         "precio",
         "descripcion",
-        "_fecha_actualizacion",
+        "fecha_actualizacion",
     )
     list_display_links = ("nombre",)
     search_fields = ("nombre",)
@@ -40,3 +40,6 @@ class ProductoAdmin(admin.ModelAdmin):
     )
     list_filter = ("categoria",)
     date_hierarchy = "_fecha_actualizacion"
+
+    def fecha_actualizacion(self, obj):
+        return obj._fecha_actualizacion

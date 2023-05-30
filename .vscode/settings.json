@@ -9,13 +9,15 @@
     // VSCODE
     "editor.formatOnSave": false,
     "files.exclude": {
-        ".git": true,
+        "**/.git": false,
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        "**/__pycache__": true
+        ".git": false,
+        "**/__pycache__": true,
+        "**.git": true
     },
     "files.autoSave": "onFocusChange",
     "workbench.tree.indent": 15,
@@ -41,4 +43,5 @@
     ],
     // CODEIUM
     "codeium.enableCodeLens": false,
+    "explorerExclude.backup": {},
 }

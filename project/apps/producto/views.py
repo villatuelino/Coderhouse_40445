@@ -19,7 +19,7 @@ from . import forms, models
 # *
 
 
-# @login_required
+@login_required
 def index(request: HttpRequest) -> HttpResponse:
     return render(request, "producto/index.html")
 
@@ -123,9 +123,9 @@ class ProductoCategoriaUpdate(UpdateView):
 # *
 
 
-def producto_categoria_detail(request: HttpRequest, pk) -> HttpResponse:
-    categoria = models.ProductoCategoria.objects.get(id=pk)
-    return render(request, "producto/productocategoria_detail.html", {"object": categoria})
+# def producto_categoria_detail(request: HttpRequest, pk) -> HttpResponse:
+#     categoria = models.ProductoCategoria.objects.get(id=pk)
+#     return render(request, "producto/productocategoria_detail.html", {"object": categoria})
 
 
 class ProductoCategoriaDetail(DetailView):

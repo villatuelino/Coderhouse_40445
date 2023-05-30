@@ -2,10 +2,8 @@ from django.contrib import admin
 
 from . import models
 
-# Camiar el nombre del sitio de admin
 admin.site.site_title = "Productos"
 admin.site.site_header = "La Caja de Pandora"
-# admin.site.register(models.ProductoCategoria)
 
 
 @admin.register(models.ProductoCategoria)
@@ -32,7 +30,7 @@ class ProductoAdmin(admin.ModelAdmin):
         "cantidad",
         "precio",
         "descripcion",
-        "fecha_actualizacion",
+        "_fecha_actualizacion",
     )
     list_display_links = ("nombre",)
     search_fields = ("nombre",)
@@ -41,4 +39,4 @@ class ProductoAdmin(admin.ModelAdmin):
         "nombre",
     )
     list_filter = ("categoria",)
-    date_hierarchy = "fecha_actualizacion"
+    date_hierarchy = "_fecha_actualizacion"

@@ -7,9 +7,11 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submi" class="btn btn-success">Guardar</button>
+        <div class="d-grid gap-3">
+            <button type="submi" class="btn btn-success">Guardar</button>
+            {% include 'producto/index_back.html' %}
+        </div>
     </form>
 
-    {% include 'producto/index_back.html' %}
 
 {% endblock content_producto %}

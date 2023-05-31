@@ -6,8 +6,8 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <div class="d-grid gap-1">
-            <button type="submit" class="btn btn-info ">Registrar nuevo usuario</button>
+        <div class="d-grid gap-3">
+            <button type="submit" class="btn btn-success">Registrar nuevo usuario</button>
         </div>
     </form>
 {% endblock content %}

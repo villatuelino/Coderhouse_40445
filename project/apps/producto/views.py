@@ -1,9 +1,6 @@
 # Importaciones para el logueo
 from django.contrib.auth.decorators import login_required  # funciones
-from django.contrib.auth.mixins import (  # clases
-    LoginRequiredMixin,
-    PermissionRequiredMixin,
-)
+from django.contrib.auth.mixins import LoginRequiredMixin  # clases
 
 # Importaciones para funciones
 from django.http import HttpRequest, HttpResponse

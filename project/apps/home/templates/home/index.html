@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-        <p>{{ mensaje }}</p>
+        <h3>Bienvenido {{ user.username }}</h3>
     {% endif %}
 
     {% if user.is_staff %}

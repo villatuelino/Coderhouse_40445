@@ -20,7 +20,7 @@ def login_request(request: HttpRequest) -> HttpResponse:
             user = authenticate(username=usuario, password=contraseña)
             if user is not None:
                 login(request, user)
-                return render(request, "home/index.html", {"mensaje": f"¡Bienvenido {usuario}!"})
+                return render(request, "home/index.html", {"mensaje": f"Se ha logueado correctamente."})
     else:
         form = AuthenticationForm()
     return render(request, "home/login.html", {"form": form})
@@ -35,14 +35,12 @@ from . import forms
 @staff_member_required
 def register(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
-        # form = UserCreationForm(request.POST)
         form = forms.CustomUserCreationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data["username"]
             form.save()
-            return render(request, "home/index.html", {"mensaje": "Usuario creado 👌"})
+            return render(request, "home/index.html", {"mensaje": "Vendedor creado 👌"})
     else:
-        # form = UserCreationForm()
         form = forms.CustomUserCreationForm()
     return render(request, "home/register.html", {"form": form})
 

@@ -1,6 +1,9 @@
 # Importaciones para el logueo
 from django.contrib.auth.decorators import login_required  # funciones
-from django.contrib.auth.mixins import LoginRequiredMixin  # clases
+from django.contrib.auth.mixins import (  # clases
+    LoginRequiredMixin,
+    PermissionRequiredMixin,
+)
 
 # Importaciones para funciones
 from django.http import HttpRequest, HttpResponse
@@ -19,9 +22,9 @@ from . import forms, models
 # *
 
 
-@login_required
-def index(request: HttpRequest) -> HttpResponse:
-    return render(request, "producto/index.html")
+# @login_required
+# def index(request: HttpRequest) -> HttpResponse:
+# return render(request, "producto/index.html")
 
 
 # class IndexView(TemplateView):
@@ -34,17 +37,36 @@ def index(request: HttpRequest) -> HttpResponse:
 
 
 # def producto_categoria_list(request):
-#     """Falta la consulta"""
+#     """Devuelve una lista de categoría de productos """
 #     categorias = models.ProductoCategoria.objects.all()
 #     context = {"categorias": categorias}
 #     return render(request, "producto/productocategoria_list.html", context)
 
 
+# def producto_categoria_list(request):
+#     """Devuelve una lista de productos de la categoría. Con formulario de consulta"""
+#     # Si la búsqueda tiene algún texto introducido, devuelve todos los productos que contengan dicho texto
+#     if request.GET.get("consulta"):
+#         query = request.GET.get("consulta")
+#         object_list = models.ProductoCategoria.objects.filter(nombre__icontains=query)
+#     # Si no, devuelve todos los productos
+#     else:
+#         object_list = models.ProductoCategoria.objects.all()
+
+#     return render(request, "producto/productocategoria_list.html", {"object_list": object_list})
+
+
+# class ProductoCategoriaList(ListView):
+#     """Devuelve una lista de categoría de productos """
+#     model = models.ProductoCategoria
+
+
 class ProductoCategoriaList(ListView):
+    """Devuelve una lista de categoría de productos. Con formulario de consulta"""
+
     model = models.ProductoCategoria
 
     def get_queryset(self):
-        """Devuelve los productos de la categoria escrita por el usuario en el formulario de búsqueda"""
         # Si la búsqueda tiene algún texto introducido, devuelve todos los productos que contengan dicho texto
         if self.request.GET.get("consulta"):
             query = self.request.GET.get("consulta")

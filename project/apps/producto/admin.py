@@ -39,8 +39,4 @@ class ProductoAdmin(admin.ModelAdmin):
         "nombre",
     )
     list_filter = ("categoria",)
-    date_hierarchy = "_fecha_actualizacion"
-
-    def fecha_actualizacion(self, obj):
-        """para que list_display muestre fecha_actualización que es una propiedad"""
-        return obj._fecha_actualizacion
+    date_hierarchy = "fecha_actualizacion"

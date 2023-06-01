@@ -31,19 +31,18 @@
                              class="img-fluid rounded-circle">
                         <a class="nav-link text-bg-light">{{ user.username }}</a>
                     </li>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="{% url 'home:logout' %}">Logout</a>
-                </li>
-            {% else %}
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == "/about/" %}active{% endif %}" href="{% url 'home:about' %}">¿Quiénes somos?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="{% url 'home:login' %}">Login</a>
-                </li>
-            {% endif %}
-        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link text-info" href="{% url 'home:logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == "/about/" %}active{% endif %}" href="{% url 'home:about' %}">¿Quiénes somos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info" href="{% url 'home:login' %}">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
-</div>
 </nav>

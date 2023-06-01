@@ -18,7 +18,7 @@ class ProductoCategoria(models.Model):
 
 
 class Producto(models.Model):
-    """Productos que corresponden a una categoría. Cada vez que se actualiza el precio, se modifica la fecha de actualización."""
+    """Productos que corresponden a una categoría."""
 
     categoria = models.ForeignKey(ProductoCategoria, on_delete=models.SET_NULL, blank=True, null=True, verbose_name="categoría")
     nombre = models.CharField(max_length=100)
@@ -32,5 +32,5 @@ class Producto(models.Model):
         verbose_name = "producto"
         verbose_name_plural = "productos"
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.nombre} ({self.unidad_de_medida}) ${self.precio:.2f}"

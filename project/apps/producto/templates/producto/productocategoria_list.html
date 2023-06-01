@@ -28,7 +28,7 @@
         <p class="fs-4 fst-italic">No hay registros ingresados</p>
     {% endif %}
     <div class="d-grid gap-3">
-        {% include 'producto/index_back.html' %}
+        {% include 'producto/index_back.html' with hola="Coder" %}
     </div>
 
 {% endblock content_producto %}

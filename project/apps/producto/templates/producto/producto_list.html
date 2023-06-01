@@ -1,0 +1,27 @@
+{% extends 'producto/index.html' %}
+
+
+{% block title %} Lista de Productos {% endblock title %}
+
+{% block content_producto %}
+
+
+    {% if object_list %}
+
+        {% for producto in object_list %}
+            <ul>
+                <li>{{ producto.nombre }} ${{ producto.precio }}
+                    <a href="{% url 'producto:producto_detail' producto.id %}" class="btn btn-secondary">Ver detalle</a>
+                    <a href="{% url 'producto:producto_update' producto.id %}" class="btn btn-primary">Actualizar</a>
+                    <a href="{% url 'producto:producto_delete' producto.id %}" class="btn btn-danger">Eliminar</a>
+                </li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p class="fs-4 fst-italic">No hay registros ingresados</p>
+    {% endif %}
+    <div class="d-grid gap-3">
+        {% include 'producto/index_back.html' %}
+    </div>
+
+{% endblock content_producto %}

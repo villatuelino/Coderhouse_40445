@@ -12,3 +12,13 @@ class ProductoCategoriaForm(forms.ModelForm):
             "nombre": forms.TextInput(attrs={"class": "form-control"}),
             "descripcion": forms.TextInput(attrs={"class": "form-control"}),
         }
+
+
+class ProductoForm(forms.ModelForm):
+    class Meta:
+        model = models.Producto
+        fields = "__all__"
+        # widgets = {
+        #     "categoria": ...
+        #     "nombre": ...
+        # }

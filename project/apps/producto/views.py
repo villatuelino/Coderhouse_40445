@@ -3,14 +3,19 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
+from project.apps.producto import mis_modelos_nuevos
+
 from . import forms, models
 
+# ***** Categoría de Productos
+# *****************************
 
-class ProductoCategoriaDetail(LoginRequiredMixin, DetailView):
+
+class ProductoCategoriaDetail(DetailView):
     model = models.ProductoCategoria
 
 
-class ProductoCategoriaList(LoginRequiredMixin, ListView):
+class ProductoCategoriaList(ListView):
     model = models.ProductoCategoria
 
     def get_queryset(self):
@@ -37,3 +42,32 @@ class ProductoCategoriaUpdate(UpdateView):
     model = models.ProductoCategoria
     success_url = reverse_lazy("producto:productocategoria_list")
     form_class = forms.ProductoCategoriaForm
+
+
+# ***** Producto
+# *****************************
+
+
+class ProductoCreate(CreateView):
+    model = models.Producto
+    form_class = forms.ProductoForm
+    success_url = reverse_lazy("producto:index")
+
+
+class ProductoList(ListView):
+    model = models.Producto
+
+
+class ProductoDetail(DetailView):
+    model = models.Producto
+
+
+class ProductoDelete(DeleteView):
+    model = models.Producto
+    success_url = reverse_lazy("producto:producto_list")
+
+
+class ProductoUpdate(UpdateView):
+    model = models.Producto
+    success_url = reverse_lazy("producto:producto_list")
+    form_class = forms.ProductoForm

@@ -1,0 +1,23 @@
+{% extends 'producto/index.html' %}
+
+
+{% block title %} Detalle de Productos {% endblock title %}
+
+{% block content_producto %}
+
+    <ul>
+        <li>
+            <p><strong>Categoría:</strong> {{ object.categoria }}</p>
+            <p><strong>Nombre:</strong> {{ object.nombre }}</p>
+            <p><strong>Unidad de medida:</strong> {{ object.unidad_de_medida }}</p>
+            <p><strong>Cantidad:</strong> {{ object.cantidad }}</p>
+            <p><strong>Precio:</strong> {{ object.precio }}</p>
+            <p><strong>Descripción:</strong> {{ object.descripcion }}</p>
+            <p><strong>Fecha de actualización:</strong> {{ object.fecha_actualizacion }}</p>
+        </li>
+    </ul>
+    <div class="d-grid gap-3">
+        {% include 'producto/index_back.html' %}
+    </div>
+
+{% endblock content_producto %}

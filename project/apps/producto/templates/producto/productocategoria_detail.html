@@ -1,18 +1,17 @@
 {% extends 'producto/index.html' %}
 
-
-{% block title %} Detalle de Categorías de Productos {% endblock title %}
+{% block title %}
+    Detalle de Categorías de Productos
+{% endblock title %}
 
 {% block content_producto %}
-
     <ul>
-        <li>
-            <p><strong>Nombre:</strong> {{ object.nombre }}</p>
-            <p><strong>Detalle:</strong> {{ object.descripcion }}</p>
-        </li>
+        <li>Nombre: {{ object.nombre }}</li>
+        <li>Detalle: {{ object.descripcion }}</li>
     </ul>
     <div class="d-grid gap-3">
-        {% include 'producto/index_back.html' %}
-    </div>
 
+        {% include 'producto/index_back.html' %}
+
+    </div>
 {% endblock content_producto %}

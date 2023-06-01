@@ -4,6 +4,7 @@
 
     {% if user.is_authenticated %}
         <h3>Bienvenido {{ user.username }}</h3>
+        {{ mensaje }}
     {% endif %}
 
     {% if user.is_staff %}

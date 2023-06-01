@@ -6,6 +6,12 @@
 
 {% block content_producto %}
     {% if object_list %}
+        <!-- Sirve para buscar categorías por nombre. Se pasa a la variable consulta de la vista. -->
+        <div class="py-lg-4">
+            <form action="{% url 'producto:productocategoria_list' %}" method="get">
+                <input name="consulta" type="text" placeholder="Buscar...">
+            </form>
+        </div>
         {% for producto in object_list %}
             <ul>
                 <li>

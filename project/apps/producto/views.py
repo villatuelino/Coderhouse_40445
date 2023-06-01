@@ -3,12 +3,9 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from project.apps.producto import mis_modelos_nuevos
-
 from . import forms, models
 
-# ***** Categoría de Productos
-# *****************************
+# **** Categoría de Productos
 
 
 class ProductoCategoriaDetail(DetailView):
@@ -44,8 +41,7 @@ class ProductoCategoriaUpdate(UpdateView):
     form_class = forms.ProductoCategoriaForm
 
 
-# ***** Producto
-# *****************************
+# *** Producto
 
 
 class ProductoCreate(CreateView):
@@ -56,6 +52,14 @@ class ProductoCreate(CreateView):
 
 class ProductoList(ListView):
     model = models.Producto
+
+    def get_queryset(self):
+        if self.request.GET.get("consulta"):
+            query = self.request.GET.get("consulta")
+            object_list = models.Producto.objects.filter(nombre__icontains=query)
+        else:
+            object_list = models.Producto.objects.all()
+        return object_list
 
 
 class ProductoDetail(DetailView):

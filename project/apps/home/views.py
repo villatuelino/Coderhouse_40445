@@ -9,7 +9,6 @@ from venta import models
 from . import forms
 
 
-@login_required
 def index(request: HttpRequest) -> HttpResponse:
     if request.user.is_authenticated:
         # vendedor = models.Vendedor.objects.filter(user=request.user).first()

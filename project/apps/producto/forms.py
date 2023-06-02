@@ -1,11 +1,11 @@
 from django import forms
 
-from . import models
+from .models import ProductoCategoria, Producto
 
 
 class ProductoCategoriaForm(forms.ModelForm):
     class Meta:
-        model = models.ProductoCategoria
+        model = ProductoCategoria
         fields = "__all__"
 
         widgets = {
@@ -16,7 +16,7 @@ class ProductoCategoriaForm(forms.ModelForm):
 
 class ProductoForm(forms.ModelForm):
     class Meta:
-        model = models.Producto
+        model = Producto
         fields = "__all__"
         # widgets = {
         #     "categoria": ...

@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 #! Sirve para generar la clave secreta para el proyecto
 from django.core.management.utils import get_random_secret_key
 
+# Para las variables LOGIN
+from django.urls import reverse_lazy
+
 #! Se agrega una cadena de forma aleatoria
 SECRET_KEY = get_random_secret_key()
 
@@ -148,7 +151,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 #! Login
 
-LOGIN_URL = "home:login"
+
+LOGIN_URL = reverse_lazy("home:login")
+# LOGIN_REDIRECT_URL = reverse_lazy("home:index")
 LOGIN_REDIRECT_URL = "home:index"
 
 

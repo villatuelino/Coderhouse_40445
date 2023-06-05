@@ -5,7 +5,7 @@ from django.db import models
 class Vendedor(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     celular = models.CharField(max_length=50)
-    avatar = models.ImageField(upload_to="avatars")
+    avatar = models.ImageField(upload_to="avatars", blank=True, null=True)
 
     class Meta:
         verbose_name = "vendedor"

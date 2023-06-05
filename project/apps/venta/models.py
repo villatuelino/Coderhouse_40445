@@ -24,6 +24,9 @@ class Venta(models.Model):
     precio_total = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
     fecha_venta = models.DateTimeField(default=timezone.now, editable=False)
 
+    class Meta:
+        ordering = ("-fecha_venta",)
+
     def clean(self):
         if self.cantidad > self.producto.cantidad:
             raise ValidationError("La cantidad vendida no puede ser mayor que la cantidad disponible en el producto.")

@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import ProductoCategoria, Producto
+from .models import Producto, ProductoCategoria
 
 
 class ProductoCategoriaForm(forms.ModelForm):
@@ -18,7 +18,3 @@ class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
         fields = "__all__"
-        # widgets = {
-        #     "categoria": ...
-        #     "nombre": ...
-        # }

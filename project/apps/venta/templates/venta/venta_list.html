@@ -1,13 +1,13 @@
-{% extends 'producto/list.html' %}
+{% extends 'venta/list.html' %}
 
 
 {% block title %}
-    Lista de Categorías de Productos
+    Lista de Venta de Productos
 {% endblock title %}
 
 {% block search %}
     <div class="py-lg-4">
-        <form action="{% url 'producto:productocategoria_list' %}" method="get">
+        <form action="{% url 'venta:venta_list' %}" method="get">
             <input name="consulta" type="text" placeholder="Buscar...">
         </form>
     </div>
@@ -15,7 +15,11 @@
  
 {% block table_header %}
     <tr>
-        <th>Nombre de categoría</th>
+        <th>Vendedor</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Fecha</th>
         <th></th>
         <th></th>
         <th></th>
@@ -23,19 +27,23 @@
 {% endblock table_header %}
  
 {% block table_body %}
-    {% for categoria in object_list %}
+    {% for venta in object_list %}
         <tr>
-            <td>{{ categoria.nombre }}</td>
+            <td>{{ venta.vendedor }}</td>
+            <td>{{ venta.producto.nombre }}</td>
+            <td>{{ venta.cantidad }}</td>
+            <td>{{ venta.precio_total }}</td>
+            <td>{{ venta.fecha_venta }}</td>
             <td>
-                <a href="{% url 'producto:productocategoria_detail' categoria.id %}"
+                <a href="{% url 'venta:venta_detail' venta.id %}"
                    class="btn btn-secondary btn-sm">Ver detalle</a>
             </td>
             <td>
-                <a href="{% url 'producto:productocategoria_update' categoria.id %}"
+                <a href="{% url 'venta:venta_update' venta.id %}"
                    class="btn btn-primary btn-sm">Actualizar</a>
             </td>
             <td>
-                <a href="{% url 'producto:productocategoria_delete' categoria.id %}"
+                <a href="{% url 'venta:venta_delete' venta.id %}"
                    class="btn btn-danger btn-sm">Eliminar</a>
             </td>
         </tr>

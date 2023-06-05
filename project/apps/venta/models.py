@@ -1,4 +1,4 @@
-import apps.producto.models as ModelProducto
+# import apps.producto.models as ModelProducto
 
 # from apps.producto.models import Producto
 from django.contrib.auth.models import User
@@ -20,18 +20,18 @@ class Vendedor(models.Model):
         return f"{self.usuario.username}"
 
 
-class Venta(models.Model):
-    venta = models.ManyToManyField(Vendedor, ModelProducto.Producto)
-    # vendedor = models.ForeignKey(Vendedor, on_delete=models.DO_NOTHING)
-    # producto = models.ForeignKey(ModelProducto.Producto, on_delete=models.DO_NOTHING)
-    cantidad = models.PositiveIntegerField()
-    # precio_total = models.DecimalField(max_digits=10, decimal_places=2)
-    fecha_venta = models.DateTimeField(default=timezone.now)
+# class Venta(models.Model):
+#     venta = models.ManyToManyField(Vendedor, ModelProducto.Producto)
+#     # vendedor = models.ForeignKey(Vendedor, on_delete=models.DO_NOTHING)
+#     # producto = models.ForeignKey(ModelProducto.Producto, on_delete=models.DO_NOTHING)
+#     cantidad = models.PositiveIntegerField()
+#     # precio_total = models.DecimalField(max_digits=10, decimal_places=2)
+#     fecha_venta = models.DateTimeField(default=timezone.now)
 
-    # def clean(self):
-    #     if self.cantidad > self.producto.cantidad:
-    #         raise ValidationError("La cantidad vendida no puede ser mayor que la cantidad disponible en el producto.")
+#     # def clean(self):
+#     #     if self.cantidad > self.producto.cantidad:
+#         raise ValidationError("La cantidad vendida no puede ser mayor que la cantidad disponible en el producto.")
 
-    # def save(self, *args, **kwargs):
-    #     self.precio_total = self.producto.precio * self.cantidad
-    #     super().save(*args, **kwargs)
+# def save(self, *args, **kwargs):
+#     self.precio_total = self.producto.precio * self.cantidad
+#     super().save(*args, **kwargs)

@@ -14,9 +14,8 @@
         <li>Descripción: {{ object.descripcion }}</li>
         <li>Fecha de actualización: {{ object.fecha_actualizacion }}</li>
     </ul>
-    <div class="d-grid gap-3">
 
-        {% include 'producto/index_back.html' %}
+    {% url 'producto:index' as url %}
+    {% include 'home/index_back.html' with link=url %}
 
-    </div>
 {% endblock content_producto %}

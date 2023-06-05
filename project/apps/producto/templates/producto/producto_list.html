@@ -1,36 +1,48 @@
-{% extends 'producto/index.html' %}
+{% extends 'producto/list.html' %}
 
 {% block title %}
     Lista de Productos
 {% endblock title %}
 
-{% block content_producto %}
-    {% if object_list %}
-        <!-- Sirve para buscar categorías por nombre. Se pasa a la variable consulta de la vista. -->
+{% if object_list %}
+    {% block search %}
         <div class="py-lg-4">
-            <form action="{% url 'producto:productocategoria_list' %}" method="get">
+            <form action="{% url 'producto:producto_list' %}" method="get">
                 <input name="consulta" type="text" placeholder="Buscar...">
             </form>
         </div>
+    {% endblock search %}
+ 
+    {% block table_header %}
+        <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    {% endblock table_header %}
+    {% block table_body %}
+ 
         {% for producto in object_list %}
-            <ul>
-                <li>
-                    {{ producto.nombre }} ${{ producto.precio }}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>${{ producto.precio }}</td>
+                <td>
                     <a href="{% url 'producto:producto_detail' producto.id %}"
                        class="btn btn-secondary">Ver detalle</a>
+                </td>
+                <td>
                     <a href="{% url 'producto:producto_update' producto.id %}"
                        class="btn btn-primary">Actualizar</a>
+                </td>
+                <td>
                     <a href="{% url 'producto:producto_delete' producto.id %}"
                        class="btn btn-danger">Eliminar</a>
-                </li>
-            </ul>
+                </td>
+            </tr>
         {% endfor %}
-    {% else %}
-        <p class="fs-4 fst-italic">No hay registros ingresados</p>
-    {% endif %}
-    <div class="d-grid gap-3">
-
-        {% include 'producto/index_back.html' %}
-
-    </div>
-{% endblock content_producto %}
+    {% endblock table_body %}
+{% else %}
+    {% include 'home/sin_registros.html' %}
+{% endif %}

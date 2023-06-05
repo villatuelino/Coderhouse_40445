@@ -9,9 +9,8 @@
         <li>Nombre: {{ object.nombre }}</li>
         <li>Detalle: {{ object.descripcion }}</li>
     </ul>
-    <div class="d-grid gap-3">
 
-        {% include 'producto/index_back.html' %}
-
-    </div>
+    {% url 'producto:index' as url %}
+    {% include 'home/index_back.html' with link=url %}
+ 
 {% endblock content_producto %}

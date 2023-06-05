@@ -4,9 +4,8 @@ from django.db import models
 
 class Vendedor(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
-    nacimiento = models.DateField(null=True)
     celular = models.CharField(max_length=50)
-    avatar = models.ImageField(upload_to="avatar/", null=True, blank=True)
+    avatar = models.ImageField(upload_to="avatars")
 
     class Meta:
         verbose_name = "vendedor"
@@ -14,6 +13,3 @@ class Vendedor(models.Model):
 
     def __str__(self):
         return f"{self.usuario.username}"
-
-    def get_absolute_url(self):
-        return self.avatar.url

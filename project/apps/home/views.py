@@ -9,11 +9,11 @@ from . import forms
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    if request.user.is_authenticated:
-        # vendedor = models.Vendedor.objects.filter(user=request.user).first()
-        vendedor = models.Vendedor.objects.filter(usuario=request.user.pk)
-        if vendedor:
-            return render(request, "home/index.html", {"vendedor": vendedor})
+    # if request.user.is_authenticated:
+    #     # vendedor = models.Vendedor.objects.filter(user=request.user).first()
+    #     vendedor = models.Vendedor.objects.filter(usuario=request.user.pk)
+    #     if vendedor:
+    #         return render(request, "home/index.html", {"vendedor": vendedor})
     return render(request, "home/index.html")
 
 

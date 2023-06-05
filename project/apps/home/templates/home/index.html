@@ -3,7 +3,15 @@
 {% load static %}
 
 {% block content %}
-    {% if user.is_authenticated %}<h3>Bienvenido {{ user.username }} {{ vendedor.avatar }}</h3>{% endif %}
+    {% if user.is_authenticated %}
+        <h3 class="d-flex align-items-center">Bienvenido {{ user.username }}
+            {% if user.vendedor.avatar.url %}
+                <img src="{{ user.vendedor.avatar.url }}" alt="Avatar" style="height: 30px;" /> 
+            {% else %}
+                <img src="{% static 'venta/avatares.png' %}" alt="avatar" style="height: 30px;" />
+            {% endif %}  
+        </h3>
+    {% endif %}
     {% if messages %}{{ messages }}{% endif %}
     {% if user.is_staff %}
         <div class="row">

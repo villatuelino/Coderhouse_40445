@@ -11,7 +11,8 @@
         <div class="d-grid gap-3">
             <button type="submit" class="btn btn-danger">Confirmar</button>
 
-            {% include 'producto/index_back.html' %}
+            {% url 'venta:index' as url %}
+            {% include 'home/index_back.html' with link=url %}
 
         </div>
     </form>

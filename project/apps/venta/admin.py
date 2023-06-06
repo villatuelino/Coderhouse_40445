@@ -10,7 +10,6 @@ class VentaAdmin(admin.ModelAdmin):
     list_display = (
         "vendedor",
         "producto",
-        "producto",
         "cantidad",
         "precio_total",
         "fecha_venta",

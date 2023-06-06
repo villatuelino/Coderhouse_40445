@@ -29,10 +29,9 @@ class VentaCreate(CreateView):
     form_class = forms.VentaForm
     success_url = reverse_lazy("venta:index")
 
-    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
-        context = super().get_context_data(**kwargs)
-        context["usuario"] = self.request.user
-        return super().get_context_data(**kwargs)
+    def form_valid(self, form):
+        form.instance.vendedor = self.request.user.vendedor
+        return super().form_valid(form)
 
 
 class VentaDelete(DeleteView):

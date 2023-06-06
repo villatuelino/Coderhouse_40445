@@ -16,6 +16,5 @@ class VentaAdmin(admin.ModelAdmin):
     )
     list_display_links = ("producto",)
     search_fields = ("producto.nombre", "vendedor")
-    ordering = ("fecha_venta",)
     list_filter = ("vendedor",)
     date_hierarchy = "fecha_venta"

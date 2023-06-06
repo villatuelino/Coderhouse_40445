@@ -5,7 +5,7 @@ from django.utils import timezone
 
 
 class Vendedor(models.Model):
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name="vendedor")
     celular = models.CharField(max_length=50)
     avatar = models.ImageField(upload_to="avatars", blank=True, null=True)
 

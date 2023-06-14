@@ -161,6 +161,8 @@ LOGIN_REDIRECT_URL = reverse_lazy("home:index")
 
 
 #! Media
+STATIC_URL = "/static/"
+import os
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
